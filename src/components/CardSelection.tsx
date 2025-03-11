@@ -177,6 +177,120 @@ export default function CardSelection() {
             </div>
           </div>
         </div>
+        {/* Right content - Swiper */}
+        <div className="w-full max-w-[clamp(280px,40vw,400px)] relative mt-8 lg:mt-0">
+          <div className="absolute -inset-1 bg-gradient-to-r from-[rgb(120,157,188)] via-[rgb(255,227,227)] to-[rgb(201,233,210)] rounded-[clamp(1rem,2vw,2rem)] blur-2xl opacity-30 animate-pulse"></div>
+          <Swiper
+            ref={swiperRef}
+            effect="cube"
+            grabCursor={true}
+            loop={true}
+            speed={1000}
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 20,
+              shadowScale: 0.94,
+            }}
+            autoplay={{
+              delay: 3000,
+              pauseOnMouseEnter: true,
+            }}
+            modules={[EffectCube, Autoplay]}
+            className="w-[clamp(260px,35vw,380px)] h-[clamp(340px,45vw,460px)] rounded-[clamp(1rem,2vw,2rem)]"
+          >
+            {[
+              {
+                img: "https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/49db1b5f-09f6-4433-be57-51687585600c",
+                title: "Ireland",
+                description:
+                  "Discover the fascinating beauty of this historic city by strolling through the rich cultural tapestry that makes Florence a timeless destination.",
+                cost: "Connect as ",
+                reviews: 138,
+                stars: 4.5,
+              },
+              {
+                img: "https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/2d165721-fe2e-4cf0-a63e-20bc5bc3f847",
+                title: "Australia",
+                description:
+                  "Explore the city's majestic castles and fascinating history by joining our guided tour for an unforgettable journey through Scotland's capital.",
+                cost: "Connect as ",
+                reviews: 307,
+                stars: 5,
+              },
+              {
+                img: "https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/d311d1de-7382-4c03-b083-5f7e88458158",
+                title: "USA",
+                description:
+                  "Experience the energy and excitement of New York City from Times Square's dazzling lights to the serene beauty of Central Park.",
+                cost: "Connect as",
+                reviews: 1152,
+                stars: 4.5,
+              },
+              {
+                img: "https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/be223a30-52d1-4a0b-8d57-2e52f02e2245",
+                title: "Canada",
+                description:
+                  "Embark on a magical journey through Tokyo by discovering the beauty of the city as cherry blossom trees paint the streets in hues of pink.",
+                cost: "Connect as ",
+                reviews: 619,
+                stars: 4,
+              },
+              {
+                img: "https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/be223a30-52d1-4a0b-8d57-2e52f02e2245",
+                title: "UK",
+                description:
+                  "Embark on a magical journey through Tokyo by discovering the beauty of the city as cherry blossom trees paint the streets in hues of pink.",
+                cost: "Connect as ",
+                reviews: 619,
+                stars: 4,
+              },
+            ].map((slide, index) => (
+              <SwiperSlide
+                key={index}
+                className="relative rounded-[clamp(1rem,2vw,2rem)] border border-[rgb(120,157,188)]/10 shadow-2xl overflow-hidden group"
+              >
+                <img
+                  src={slide.img}
+                  alt={slide.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/90"></div>
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-[rgb(120,157,188)]/10 backdrop-blur-md rounded-full py-1.5 sm:py-2 px-4 sm:px-6">
+                  <span className="text-[rgb(120,157,188)] text-xs sm:text-sm font-semibold">
+                    {slide.cost}
+                  </span>
+                </div>
+                <div className="absolute bottom-0 left-0 w-full p-4 sm:p-6 md:p-8">
+                  <h2 className="text-xl sm:text-2xl font-['Outfit'] font-bold mb-2 sm:mb-3 transform group-hover:translate-y-[-4px] transition-transform duration-300 text-white">
+                    {slide.title}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-gray-200 mb-3 sm:mb-4 line-clamp-2 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                    {slide.description}
+                  </p>
+                  <div className="flex items-center gap-3 sm:gap-4 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                    <div className="flex gap-0.5 sm:gap-1">
+                      {Array.from({ length: Math.floor(slide.stars) }).map(
+                        (_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400"
+                          />
+                        )
+                      )}
+                      {slide.stars % 1 !== 0 && (
+                        <StarHalf className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                      )}
+                    </div>
+                    <span className="text-xs sm:text-sm text-gray-300">
+                      {slide.reviews} reviews
+                    </span>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </section>
     </div>
   );
