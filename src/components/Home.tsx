@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Carousel from "./Carousel";
 import { motion } from "framer-motion";
 import Services from "./Services";
+import CardSelection from "./CardSelection";
 
 const Home = () => {
   return (
@@ -36,6 +37,9 @@ const Home = () => {
       </section>
       <section className=" w-full">
         <Services />
+      </section>
+      <section>
+        <CardSelection />
       </section>
     </motion.div>
   );
