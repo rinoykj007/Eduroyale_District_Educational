@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Carousel from "./Carousel";
 import { motion } from "framer-motion";
+import Services from "./Services";
 
 const Home = () => {
   return (
@@ -32,6 +33,9 @@ const Home = () => {
         <div className="relative z-10 h-full">
           <Carousel />
         </div>
+      </section>
+      <section className=" w-full">
+        <Services />
       </section>
     </motion.div>
   );
