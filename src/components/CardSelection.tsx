@@ -177,7 +177,7 @@ export default function CardSelection() {
             </div>
           </div>
         </div>
-        {/* Right content - Swiper */}
+        {/* Right content - Swiper Right content - Swiper*/}
         <div className="w-full max-w-[clamp(280px,40vw,400px)] relative mt-8 lg:mt-0">
           <div className="absolute -inset-1 bg-gradient-to-r from-[rgb(120,157,188)] via-[rgb(255,227,227)] to-[rgb(201,233,210)] rounded-[clamp(1rem,2vw,2rem)] blur-2xl opacity-30 animate-pulse"></div>
           <Swiper
@@ -290,6 +290,23 @@ export default function CardSelection() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+        <div>
+          {/* Social media link */}
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed right-4 sm:right-6 bottom-4 sm:bottom-6 z-10 transform hover:scale-110 transition-transform duration-300"
+          >
+            <div className="relative group">
+              <img
+                src="https://assets.codepen.io/9868786/youtube.webp"
+                alt="YouTube"
+                className="relative w-12 sm:w-14 md:w-16 lg:w-20 rounded-[0.75rem] sm:rounded-[1rem]"
+              />
+            </div>
+          </a>
         </div>
       </section>
     </div>
