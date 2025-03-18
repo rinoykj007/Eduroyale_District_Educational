@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 import { motion } from "framer-motion";
 import Services from "./Services";
 import CardSelection from "./CardSelection";
+import TestimonialCarousel from "./TestimonialCarousel";
 
 const Home = () => {
   return (
@@ -40,6 +41,10 @@ const Home = () => {
       </section>
       <section>
         <CardSelection />
+      </section>
+      {/* Testimonials Section */}
+      <section className="bg-white w-full">
+        <TestimonialCarousel />
       </section>
     </motion.div>
   );
