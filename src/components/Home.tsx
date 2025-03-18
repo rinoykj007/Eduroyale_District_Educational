@@ -7,6 +7,33 @@ import CardSelection from "./CardSelection";
 import TestimonialCarousel from "./TestimonialCarousel";
 
 const Home = () => {
+  // Testimonials array is defined
+  const testimonials = [
+    {
+      text: "EduAbroadConsult made my dream of studying abroad a reality. Their guidance was invaluable throughout the entire process.",
+      name: "John Doe",
+      university: "University of XYZ",
+      image: "https://randomuser.me/api/portraits/men/1.jpg",
+    },
+    {
+      text: "I couldn't have navigated the complex application process without EduAbroadConsult. They were there every step of the way.",
+      name: "Jane Smith",
+      university: "ABC University",
+      image: "https://randomuser.me/api/portraits/women/2.jpg",
+    },
+    {
+      text: "Thanks to EduAbroadConsult, I'm now studying at my dream university. Their expertise and support were crucial to my success.",
+      name: "Mike Johnson",
+      university: "Global Institute",
+      image: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      text: "The personalized attention I received from EduAbroadConsult was amazing. They truly care about each student's journey.",
+      name: "Emily Brown",
+      university: "International College",
+      image: "https://randomuser.me/api/portraits/women/4.jpg",
+    },
+  ];
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -44,7 +71,7 @@ const Home = () => {
       </section>
       {/* Testimonials Section */}
       <section className="bg-white w-full">
-        <TestimonialCarousel />
+        <TestimonialCarousel testimonials={testimonials} />
       </section>
     </motion.div>
   );

@@ -48,6 +48,9 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
       <div className="w-2 h-2 mx-1 rounded-full bg-gray-200 hover:bg-blue-500 transition-all duration-300 hover:scale-150" />
     ),
   };
+  if (!testimonials || testimonials.length === 0) {
+    return <div>No testimonials available.</div>;
+  }
 
   return (
     <div className="relative font-poppins overflow-hidden pt-8 pb-16 md:pb-24">
@@ -137,6 +140,70 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
       >
         What Our Students Say
       </motion.h2>
+      <div className="relative z-10 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
+        <Slider {...settings}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="px-3 py-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 transform hover:scale-105 transition-all duration-300 border border-gray-100"
+                style={{
+                  background:
+                    "linear-gradient(145deg, #ffffff 0%, #f8faff 100%)",
+                }}
+              >
+                <div className="flex items-center mb-8">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full blur opacity-20 scale-110 group-hover:opacity-30 group-hover:scale-125 transition-all duration-300" />
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover border-2 border-blue-500 relative z-10 group-hover:border-3 transition-all duration-300"
+                    />
+                    <div className="absolute -bottom-1 -right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-white z-20 animate-pulse group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <div className="ml-4 transform transition-transform duration-300">
+                    <motion.h4
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                      className="font-bold text-gray-800 text-lg tracking-tight hover:text-blue-600 transition-colors duration-300"
+                    >
+                      {testimonial.name}
+                    </motion.h4>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      className="text-sm text-blue-600 font-medium hover:text-blue-700 transition-colors duration-300"
+                    >
+                      {testimonial.university}
+                    </motion.p>
+                  </div>
+                </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="relative bg-gradient-to-br from-white to-blue-50/30 rounded-xl p-6"
+                >
+                  <span className="absolute -left-2 -top-4 text-6xl text-blue-200 opacity-50 font-serif transform -rotate-6">
+                    "
+                  </span>
+                  <p className="text-gray-600 text-lg leading-relaxed italic relative z-10">
+                    {testimonial.text}
+                  </p>
+                  <span className="absolute -right-2 -bottom-8 text-6xl text-blue-200 opacity-50 font-serif transform rotate-6">
+                    "
+                  </span>
+                </motion.div>
+              </motion.div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
