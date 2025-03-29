@@ -31,13 +31,9 @@ export default function BlogAdmin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Remove MongoDB-specific fields and create a clean blog object
-    const { _id, createdAt, ...cleanBlog } = newBlog;
-    
     const apiCall = editingBlog?._id
-      ? axios.put(`http://localhost:3000/api/blogs/${editingBlog._id}`, cleanBlog)
-      : axios.post("http://localhost:3000/api/blogs", cleanBlog);
+      ? axios.put(`http://localhost:3000/api/blogs/${editingBlog._id}`, newBlog)
+      : axios.post("http://localhost:3000/api/blogs", newBlog);
 
     apiCall
       .then(() => {
@@ -55,9 +51,7 @@ export default function BlogAdmin() {
 
   const handleEdit = (blog) => {
     setEditingBlog(blog);
-    // Remove MongoDB-specific fields when setting the blog for editing
-    const { _id, createdAt, ...cleanBlog } = blog;
-    setNewBlog({ ...cleanBlog });
+    setNewBlog({ ...blog });
   };
 
   const handleDelete = (id) => {
