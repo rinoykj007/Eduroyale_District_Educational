@@ -58,6 +58,206 @@ const Footer = () => {
                 </p>
               </div>
             </div>
+
+            {/* Navigation Sections */}
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-gradient-to-r from-slate-900/90 to-blue-950/80 p-4 rounded-lg backdrop-blur-sm border border-blue-900/30">
+              <div className="flex flex-col group">
+                <h4 className="text-sm font-semibold mb-2 uppercase relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200">
+                  Navigation
+                </h4>
+                <ul className="space-y-1.5 text-xs font-poppins">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-all duration-300 flex items-center group"
+                    >
+                      <span className="text-blue-400/80 mr-2 transform group-hover:translate-x-1 transition-transform duration-300">
+                        ›
+                      </span>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">
+                        Home
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-all duration-300 flex items-center group"
+                    >
+                      <span className="text-blue-400/80 mr-2 transform group-hover:translate-x-1 transition-transform duration-300">
+                        ›
+                      </span>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">
+                        About Us
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-all duration-300 flex items-center group"
+                    >
+                      <span className="text-blue-400/80 mr-2 transform group-hover:translate-x-1 transition-transform duration-300">
+                        ›
+                      </span>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">
+                        Courses
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-all duration-300 flex items-center group"
+                    >
+                      <span className="text-blue-400/80 mr-2 transform group-hover:translate-x-1 transition-transform duration-300">
+                        ›
+                      </span>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">
+                        Contact Us
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Study Abroad */}
+              <div className="flex flex-col">
+                <h4 className="text-sm font-semibold mb-2 uppercase relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200">
+                  Study Abroad
+                </h4>
+                <ul className="space-y-1.5 text-xs font-poppins">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Ireland
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> UK
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Canada
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> New
+                      Zealand
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Service */}
+              <div className="flex flex-col">
+                <h4 className="text-sm font-semibold mb-2 uppercase relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200">
+                  Service
+                </h4>
+                <ul className="space-y-1.5 text-xs font-poppins">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Expert
+                      Counseling
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Course
+                      Selection
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Country
+                      Selection
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Bank Loan
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Tag */}
+              <div className="flex flex-col">
+                <h4 className="text-sm font-semibold mb-2 uppercase relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200">
+                  Tag
+                </h4>
+                <ul className="space-y-1.5 text-xs font-poppins">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Academics
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Student
+                      Support
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Go Abroad
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> FAQ
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-blue-300 transition-colors flex items-center"
+                    >
+                      <span className="text-blue-400/80 mr-2">›</span> Student
+                      Reviews
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
