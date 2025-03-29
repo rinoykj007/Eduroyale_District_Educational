@@ -656,7 +656,7 @@ const Courses = () => {
             <button
               key={country.id}
               onClick={() => setSelectedCountry(country.id)}
-              className={`px-4 py-2 rounded ${
+              className={`px-4 py-2 rounded-3xl  ${
                 selectedCountry === country.id
                   ? "bg-blue-500 text-white"
                   : "bg-white"
