@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Services from "./Services";
 import CardSelection from "./CardSelection";
 import TestimonialCarousel from "./TestimonialCarousel";
-
+import ImageCarousel from "./ImageCarousel";
 const Home = () => {
   // Testimonials array is defined
   const testimonials = [
@@ -72,6 +72,9 @@ const Home = () => {
       {/* Testimonials Section */}
       <section className="bg-white w-full">
         <TestimonialCarousel testimonials={testimonials} />
+      </section>
+      <section className="bg-white w-full pb-2">
+        <ImageCarousel />
       </section>
     </motion.div>
   );
