@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { WhatsApp } from "./WhatsApp";
+import WhatsApp from "./WhatsApp";
 import Carousel1 from "../assets/Image/carousel-1.jpg";
 import Carousel2 from "../assets/Image/carousel-2.jpg";
 import Carousel3 from "../assets/Image/carousel-3.jpeg";
