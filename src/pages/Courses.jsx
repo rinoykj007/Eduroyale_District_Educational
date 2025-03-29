@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WhatsApp from "../components/WhatsApp";
 import { GB, US, CA, AU, NZ, IE } from "country-flag-icons/react/3x2";
 
 const Courses = () => {
@@ -765,6 +766,11 @@ const Courses = () => {
             </div>
           ))}
         </div>
+
+        <WhatsApp
+          phoneNumber="1234567890"
+          message="Hi, I'm interested in your courses!"
+        />
       </main>
     </div>
   );
