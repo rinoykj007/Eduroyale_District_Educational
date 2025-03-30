@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiCheck, FiStar } from "react-icons/fi";
 import DotLottiePlayer from "../components/DotLottiePlayer";
 
 const fadeInUpVariant = {
@@ -226,6 +226,48 @@ const ExpertCounseling = () => {
                 )}
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+        {/* CTA Section */}
+        <motion.div {...fadeInUpVariant} className="text-center">
+          <div className="bg-gradient-to-br from-white to-indigo-50 rounded-2xl p-8 md:p-12 border border-indigo-100 shadow-xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-[0.02]"></div>
+
+            <motion.div
+              {...fadeInUpVariant}
+              className="inline-block mb-6 px-6 py-2 bg-indigo-50 rounded-full text-indigo-600 text-sm font-semibold shadow-sm"
+            >
+              Limited Time Offer
+            </motion.div>
+
+            <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-indigo-600 to-indigo-500">
+              Start Your Journey Today
+            </h2>
+
+            <p className="text-slate-600 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+              Take advantage of our free consultation and let our experts guide
+              you towards your dream of studying abroad.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <motion.button
+                {...buttonVariant}
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 hover:translate-y-[-2px]"
+              >
+                Book Free Consultation <FiArrowRight />
+              </motion.button>
+
+              <div className="flex items-center gap-4 text-slate-600">
+                <div className="flex items-center gap-2">
+                  <FiCheck className="text-indigo-500" />
+                  <span>No Hidden Fees</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FiStar className="text-yellow-400" />
+                  <span>100% Success Rate</span>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
