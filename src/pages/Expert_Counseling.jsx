@@ -15,7 +15,54 @@ const buttonVariant = {
   whileHover: { scale: 1.02 },
   whileTap: { scale: 0.98 },
 };
-
+const Features = [
+  {
+    title: "Personalized Guidance",
+    description:
+      "One-on-one sessions tailored to your academic goals and career aspirations.",
+    icon: "🎯",
+    gradient: "from-blue-50 to-indigo-50",
+    iconBg: "from-blue-500 to-indigo-500",
+  },
+  {
+    title: "Career Assessment",
+    description:
+      "Comprehensive evaluation of your skills, interests, and career objectives.",
+    icon: "📊",
+    gradient: "from-purple-50 to-pink-50",
+    iconBg: "from-purple-500 to-pink-500",
+  },
+  {
+    title: "University Selection",
+    description:
+      "Expert advice on choosing the right universities based on your profile.",
+    icon: "🎓",
+    gradient: "from-emerald-50 to-teal-50",
+    iconBg: "from-emerald-500 to-teal-500",
+  },
+  {
+    title: "Course Planning",
+    description: "Strategic course selection aligned with your career goals.",
+    icon: "📚",
+    gradient: "from-orange-50 to-amber-50",
+    iconBg: "from-orange-500 to-amber-500",
+  },
+  {
+    title: "Profile Evaluation",
+    description:
+      "Detailed assessment of your academic and professional background.",
+    icon: "📋",
+    gradient: "from-cyan-50 to-sky-50",
+    iconBg: "from-cyan-500 to-sky-500",
+  },
+  {
+    title: "Future Planning",
+    description: "Long-term career planning and growth opportunities.",
+    icon: "🚀",
+    gradient: "from-rose-50 to-red-50",
+    iconBg: "from-rose-500 to-red-500",
+  },
+];
 const ExpertCounseling = () => {
   return (
     <div className="bg-gradient-to-br from-[#F8FAFC] via-[#FFFFFF] to-[#F1F5F9] min-h-screen text-[#334155] font-moderustic">
@@ -81,6 +128,32 @@ const ExpertCounseling = () => {
             </motion.div>
           </div>
         </motion.div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {Features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className={`bg-gradient-to-br ${feature.gradient} rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-slate-100/20 backdrop-blur-sm`}
+            >
+              <div
+                className={`text-4xl mb-6 p-4 bg-gradient-to-br ${feature.iconBg} rounded-xl inline-block shadow-sm text-white`}
+              >
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
