@@ -6,7 +6,8 @@ import Blog from "./pages/Blog";
 import BlogAdmin from "./pages/admin/BlogAdmin";
 import Footer from "./components/Footer";
 import Courses from "./pages/courses";
-import Expert_Counseling from "./pages/Expert_Counseling";
+import Expert_Counseling from "./pages/Services/Expert_Counseling";
+import CourseSelection from "./pages/Services/CourseSelection";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
             <Route
               path="/services/expert-counseling"
               element={<Expert_Counseling />}
+            />
+            <Route
+              path="/services/course-selection"
+              element={<CourseSelection />}
             />
           </Routes>
         </main>

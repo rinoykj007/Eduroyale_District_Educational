@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiCheck, FiStar } from "react-icons/fi";
-import DotLottiePlayer from "../components/DotLottiePlayer";
+import DotLottiePlayer from "../../components/DotLottiePlayer";
+import WhatsApp from "../../components/WhatsApp";
 
 const fadeInUpVariant = {
   initial: { opacity: 0, y: 20 },
@@ -142,6 +143,7 @@ const ExpertCounseling = () => {
               >
                 <motion.button
                   {...buttonVariant}
+                  onClick={handleBookConsultation}
                   className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 hover:translate-y-[-2px]"
                 >
                   Book Free Consultation <FiArrowRight className="ml-1" />
@@ -233,7 +235,7 @@ const ExpertCounseling = () => {
           </div>
         </motion.div>
         {/* CTA Section */}
-        <motion.div {...fadeInUpVariant} className="text-center">
+        <motion.div {...fadeInUpVariant} className="text-center pb-16">
           <div className="bg-gradient-to-br from-white to-indigo-50 rounded-2xl p-8 md:p-12 border border-indigo-100 shadow-xl relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-[0.02]"></div>
 
@@ -276,6 +278,10 @@ const ExpertCounseling = () => {
           </div>
         </motion.div>
       </div>
+      <WhatsApp
+        phoneNumber="1234567890"
+        message="Hi, I'm interested in your courses!"
+      />
     </div>
   );
 };
