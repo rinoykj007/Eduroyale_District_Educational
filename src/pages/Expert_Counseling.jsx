@@ -63,6 +63,38 @@ const Features = [
     iconBg: "from-rose-500 to-red-500",
   },
 ];
+const Process = [
+  {
+    step: "1",
+    title: "Initial Consultation",
+    description:
+      "Free consultation to understand your requirements and aspirations",
+    gradient: "from-blue-50 to-indigo-50",
+    numberBg: "from-blue-600 to-indigo-600",
+  },
+  {
+    step: "2",
+    title: "Profile Analysis",
+    description:
+      "Detailed evaluation of your academic and professional background",
+    gradient: "from-purple-50 to-pink-50",
+    numberBg: "from-purple-600 to-pink-600",
+  },
+  {
+    step: "3",
+    title: "Customized Plan",
+    description: "Development of a personalized education and career roadmap",
+    gradient: "from-emerald-50 to-teal-50",
+    numberBg: "from-emerald-600 to-teal-600",
+  },
+  {
+    step: "4",
+    title: "Ongoing Support",
+    description: "Continuous guidance throughout your academic journey",
+    gradient: "from-orange-50 to-amber-50",
+    numberBg: "from-orange-600 to-amber-600",
+  },
+];
 const ExpertCounseling = () => {
   return (
     <div className="bg-gradient-to-br from-[#F8FAFC] via-[#FFFFFF] to-[#F1F5F9] min-h-screen text-[#334155] font-moderustic">
@@ -154,6 +186,48 @@ const ExpertCounseling = () => {
             </motion.div>
           ))}
         </div>
+        {/* Process Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <h2 className="text-4xl font-bold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-indigo-600 to-indigo-500">
+            Our Counseling Process
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {Process.map((process, index) => (
+              <motion.div
+                key={index}
+                {...fadeInUpVariant}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative"
+              >
+                <div
+                  className={`bg-gradient-to-br ${process.gradient} rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-slate-100/20 backdrop-blur-sm h-full group hover:scale-[1.02]`}
+                >
+                  <div
+                    className={`flex items-center justify-center w-12 h-12 bg-gradient-to-br ${process.numberBg} rounded-full text-white font-bold mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  >
+                    {process.step}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                    {process.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {process.description}
+                  </p>
+                </div>
+                {index < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 text-gray-400">
+                    <FiArrowRight className="w-6 h-6" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );
