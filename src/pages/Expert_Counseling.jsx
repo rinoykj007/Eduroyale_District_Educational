@@ -1,18 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import DotLottiePlayer from "../components/DotLottiePlayer";
 
 const fadeInUpVariant = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8 }
+  transition: { duration: 0.8 },
 };
 
 const buttonVariant = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   whileHover: { scale: 1.02 },
-  whileTap: { scale: 0.98 }
+  whileTap: { scale: 0.98 },
 };
 
 const ExpertCounseling = () => {
@@ -20,10 +21,12 @@ const ExpertCounseling = () => {
     <div className="bg-gradient-to-br from-[#F8FAFC] via-[#FFFFFF] to-[#F1F5F9] min-h-screen text-[#334155] font-moderustic">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <motion.div {...fadeInUpVariant} className="text-center mb-16 relative mt-24">
+        <motion.div
+          {...fadeInUpVariant}
+          className="text-center mb-16 relative mt-24"
+        >
           <motion.div
-            initial={{ scale: 0.95 }}
-            animate={{ scale: 1 }}
+            {...fadeInUpVariant}
             transition={{ duration: 0.5 }}
             className="inline-block mb-6 px-6 py-2 bg-indigo-50 rounded-full text-indigo-600 text-sm font-semibold shadow-sm"
           >
@@ -70,11 +73,12 @@ const ExpertCounseling = () => {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              {...fadeInUpVariant}
               transition={{ duration: 1, delay: 0.4 }}
               className="w-full lg:w-1/2 relative"
-            ></motion.div>
+            >
+              <DotLottiePlayer />
+            </motion.div>
           </div>
         </motion.div>
       </div>
