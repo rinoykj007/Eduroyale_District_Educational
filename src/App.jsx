@@ -6,6 +6,7 @@ import Blog from "./pages/Blog";
 import BlogAdmin from "./pages/admin/BlogAdmin";
 import Footer from "./components/Footer";
 import Courses from "./pages/courses";
+import Expert_Counseling from "./pages/Expert_Counseling";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/admin/blog" element={<BlogAdmin />} />
             <Route path="/courses" element={<Courses />} />
+            <Route
+              path="/services/expert-counseling"
+              element={<Expert_Counseling />}
+            />
           </Routes>
         </main>
         <Footer />
