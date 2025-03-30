@@ -95,7 +95,11 @@ const Process = [
     numberBg: "from-orange-600 to-amber-600",
   },
 ];
+
 const ExpertCounseling = () => {
+  const handleBookConsultation = () => {
+    window.location.href = "https://api.whatsapp.com/send?phone=918123456789";
+  };
   return (
     <div className="bg-gradient-to-br from-[#F8FAFC] via-[#FFFFFF] to-[#F1F5F9] min-h-screen text-[#334155] font-moderustic">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -252,6 +256,7 @@ const ExpertCounseling = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <motion.button
                 {...buttonVariant}
+                onClick={handleBookConsultation}
                 className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 hover:translate-y-[-2px]"
               >
                 Book Free Consultation <FiArrowRight />
