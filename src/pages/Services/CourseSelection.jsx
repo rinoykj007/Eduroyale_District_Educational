@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import courseSelectionAnimation from "../../assets/animations/Course_Selection.json";
+import WhatsApp from "../../components/WhatsApp";
 
 const fadeInUpVariant = {
   initial: { opacity: 0, y: 20 },
@@ -91,6 +92,11 @@ export default function CourseSelection() {
           </motion.div>
         </div>
       </div>
+      <WhatsApp
+        phoneNumber="1234567890"
+        message="Hi, I'm interested in your courses!"
+        onClick={handleGetStarted}
+      />
     </div>
   );
 }

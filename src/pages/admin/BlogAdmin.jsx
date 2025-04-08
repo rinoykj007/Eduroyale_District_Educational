@@ -31,8 +31,16 @@ export default function BlogAdmin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Only include allowed fields for update
+    const blogData = {
+      title: newBlog.title,
+      content: newBlog.content,
+      author: newBlog.author
+    };
+
     const apiCall = editingBlog?._id
-      ? axios.put(`http://localhost:3000/api/blogs/${editingBlog._id}`, newBlog)
+      ? axios.put(`http://localhost:3000/api/blogs/${editingBlog._id}`, blogData)
       : axios.post("http://localhost:3000/api/blogs", newBlog);
 
     apiCall
@@ -42,7 +50,10 @@ export default function BlogAdmin() {
         return axios.get("http://localhost:3000/api/blogs");
       })
       .then((response) => setBlogs(response.data))
-      .catch((error) => alert("Error saving blog: " + error.message));
+      .catch((error) => {
+        console.error("Error saving blog:", error);
+        alert("Error saving blog: " + error.response?.data?.error || error.message);
+      });
   };
 
   const handleInputChange = (field, value) => {
