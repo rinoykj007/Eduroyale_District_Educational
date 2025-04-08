@@ -8,7 +8,8 @@ import Footer from "./components/Footer";
 import Courses from "./pages/courses";
 import Expert_Counseling from "./pages/Services/Expert_Counseling";
 import CourseSelection from "./pages/Services/CourseSelection";
-
+import BankLoan from "./pages/Services/Bank_Loan";
+import CountrySelection from "./pages/Services/CountrySelection";
 function App() {
   return (
     <Router>
@@ -27,6 +28,11 @@ function App() {
             <Route
               path="/services/course-selection"
               element={<CourseSelection />}
+            />
+            <Route path="/services/bank-loan" element={<BankLoan />} />
+            <Route
+              path="/services/country-selection"
+              element={<CountrySelection />}
             />
           </Routes>
         </main>
