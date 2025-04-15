@@ -10,8 +10,7 @@ import Expert_Counseling from "./pages/Services/Expert_Counseling";
 import CourseSelection from "./pages/Services/CourseSelection";
 import BankLoan from "./pages/Services/Bank_Loan";
 import CountrySelection from "./pages/Services/CountrySelection";
-import FreeIeltsTraining from "./pages/Services/FreeIeltsTraining.jsx";
-
+import TravelAssistance from "./pages/Services/TravelAssistance";
 function App() {
   return (
     <Router>
@@ -37,8 +36,8 @@ function App() {
               element={<CountrySelection />}
             />
             <Route
-              path="/services/free-ielts-training"
-              element={<FreeIeltsTraining />}
+              path="/services/travel-assistance"
+              element={<TravelAssistance />}
             />
           </Routes>
         </main>
