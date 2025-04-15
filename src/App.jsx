@@ -12,6 +12,8 @@ import BankLoan from "./pages/Services/Bank_Loan";
 import CountrySelection from "./pages/Services/CountrySelection";
 import TravelAssistance from "./pages/Services/TravelAssistance";
 import VisaGuidance from "./pages/Services/VisaGuidance";
+import PostVisaAssistance from "./pages/Services/PostVisaAssistance";
+
 function App() {
   return (
     <Router>
@@ -41,6 +43,10 @@ function App() {
               element={<TravelAssistance />}
             />
             <Route path="/services/visa-guidance" element={<VisaGuidance />} />
+            <Route
+              path="/services/post-visa-assistance"
+              element={<PostVisaAssistance />}
+            />
           </Routes>
         </main>
         <Footer />
