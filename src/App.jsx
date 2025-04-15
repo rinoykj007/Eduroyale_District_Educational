@@ -11,6 +11,7 @@ import CourseSelection from "./pages/Services/CourseSelection";
 import BankLoan from "./pages/Services/Bank_Loan";
 import CountrySelection from "./pages/Services/CountrySelection";
 import TravelAssistance from "./pages/Services/TravelAssistance";
+import VisaGuidance from "./pages/Services/VisaGuidance";
 function App() {
   return (
     <Router>
@@ -39,6 +40,7 @@ function App() {
               path="/services/travel-assistance"
               element={<TravelAssistance />}
             />
+            <Route path="/services/visa-guidance" element={<VisaGuidance />} />
           </Routes>
         </main>
         <Footer />
