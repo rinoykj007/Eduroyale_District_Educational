@@ -13,6 +13,7 @@ import CountrySelection from "./pages/Services/CountrySelection";
 import TravelAssistance from "./pages/Services/TravelAssistance";
 import VisaGuidance from "./pages/Services/VisaGuidance";
 import PostVisaAssistance from "./pages/Services/PostVisaAssistance";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/admin/blog" element={<BlogAdmin />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/contact" element={<Contact />} />
             <Route
               path="/services/expert-counseling"
               element={<Expert_Counseling />}
