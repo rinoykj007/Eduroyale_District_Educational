@@ -1,6 +1,15 @@
 const Blog = require("../models/Blog");
 const logger = require("../utils/logger");
 
+// validation function
+const validateEmptyBody = (req, res, type = "Blog") => {
+  if (!req.body?.title || !req.body?.content) {
+    res.status(400).json({ error: `${type} title and content are required` });
+    return true;
+  }
+  return false;
+};
+
 // Get all blogs
 const getAllBlogs = async (req, res) => {
   try {
@@ -19,15 +28,7 @@ const getAllBlogs = async (req, res) => {
 const createBlog = async (req, res) => {
   try {
     // Validate request body
-    if (!req.body || Object.keys(req.body).length === 0) {
-      return res.status(400).json({ error: "Blog data cannot be empty" });
-    }
-
-    if (!req.body.title || !req.body.content) {
-      return res
-        .status(400)
-        .json({ error: "Blog title and content are required" });
-    }
+    if (validateEmptyBody(req, res)) return;
 
     const blog = await Blog.create(req.body);
     logger.info(`Created new blog with ID: ${blog._id}`);
@@ -73,9 +74,7 @@ const updateBlog = async (req, res) => {
     const { id } = req.params;
 
     // Validate request body
-    if (!req.body || Object.keys(req.body).length === 0) {
-      return res.status(400).json({ error: "Update data cannot be empty" });
-    }
+    if (validateEmptyBody(req, res)) return;
 
     try {
       const updatedBlog = await Blog.update(id, req.body);
