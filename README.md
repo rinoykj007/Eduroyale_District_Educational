@@ -47,14 +47,6 @@ A modern educational consulting web application built with React and TypeScript,
 
 ## Third-Party Attributions
 
-### Libraries and Frameworks
-
-- React (MIT License) - https://reactjs.org
-- Framer Motion (MIT License) - https://www.framer.com/motion
-- Swiper.js (MIT License) - https://swiperjs.com
-- Tailwind CSS (MIT License) - https://tailwindcss.com
-- React Router (MIT License) - https://reactrouter.com
-
 ### Icons and Assets
 
 - React Icons (MIT License) - https://react-icons.github.io/react-icons
