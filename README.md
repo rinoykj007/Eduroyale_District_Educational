@@ -45,8 +45,6 @@ A modern educational consulting web application built with React and TypeScript,
 - **Animations**: Framer Motion
 - **Routing**: React Router
 
-## Third-Party Attributions
-
 ### Icons and Assets
 
 - React Icons (MIT License) - https://react-icons.github.io/react-icons
