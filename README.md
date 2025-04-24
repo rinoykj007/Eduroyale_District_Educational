@@ -2,6 +2,10 @@
 
 A modern educational consulting web application built with React and TypeScript, providing comprehensive educational services and resources.
 
+## Live Demo
+
+Visit our live application: https://prffrondend-production.up.railway.app/
+
 ## Business Requirements & Functionalities
 
 ### Core Features
@@ -44,6 +48,16 @@ A modern educational consulting web application built with React and TypeScript,
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Routing**: React Router
+
+## Third-Party Attributions
+
+### Libraries and Frameworks
+
+- React (MIT License) - https://reactjs.org
+- Framer Motion (MIT License) - https://www.framer.com/motion
+- Swiper.js (MIT License) - https://swiperjs.com
+- Tailwind CSS (MIT License) - https://tailwindcss.com
+- React Router (MIT License) - https://reactrouter.com
 
 ### Icons and Assets
 
