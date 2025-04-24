@@ -10,6 +10,14 @@ const validateEmptyBody = (req, res, type = "Blog") => {
   return false;
 };
 
+// error handler
+const handleError = (res, error, opertion = "fetching") => {
+  logger.error(`Error ${opertion} blogs:`, error);
+  res
+    .status(500)
+    .json({ error: `Failed to ${opertion} blogs`, details: error.message });
+};
+
 // Get all blogs
 const getAllBlogs = async (req, res) => {
   try {
@@ -17,27 +25,21 @@ const getAllBlogs = async (req, res) => {
     logger.info(`Successfully fetched ${blogs.length} blogs`);
     res.json(blogs);
   } catch (error) {
-    logger.error("Error fetching blogs:", error);
-    res
-      .status(500)
-      .json({ error: "Failed to fetch blogs", details: error.message });
+    handleError(res, error, "fetching blogs");
   }
 };
 
 // Create new blog
 const createBlog = async (req, res) => {
   try {
-    // Validate request body
+    // validation
     if (validateEmptyBody(req, res)) return;
 
     const blog = await Blog.create(req.body);
     logger.info(`Created new blog with ID: ${blog._id}`);
     res.status(201).json(blog);
   } catch (error) {
-    logger.error("Error creating blog:", error);
-    res
-      .status(500)
-      .json({ error: "Failed to create blog", details: error.message });
+    handleError(res, error, "creating blog");
   }
 };
 
@@ -45,26 +47,18 @@ const createBlog = async (req, res) => {
 const getBlogById = async (req, res) => {
   try {
     const { id } = req.params;
+    const blog = await Blog.findById(id);
 
-    try {
-      const blog = await Blog.findById(id);
-
-      if (!blog) {
-        return res.status(404).json({ error: "Blog not found" });
-      }
-
-      res.json(blog);
-    } catch (error) {
-      if (error.message === "Invalid blog ID format") {
-        return res.status(400).json({ error: error.message });
-      }
-      throw error;
+    if (!blog) {
+      return res.status(404).json({ error: "Blog not found" });
     }
+
+    res.json(blog);
   } catch (error) {
-    logger.error(`Error fetching blog with ID ${req.params.id}:`, error);
-    res
-      .status(500)
-      .json({ error: "Failed to fetch blog", details: error.message });
+    if (error.message === "Invalid blog ID format") {
+      return res.status(400).json({ error: error.message });
+    }
+    handleError(res, error, "fetching blog by id");
   }
 };
 
@@ -73,29 +67,22 @@ const updateBlog = async (req, res) => {
   try {
     const { id } = req.params;
 
-    // Validate request body
+    // validation
     if (validateEmptyBody(req, res)) return;
 
-    try {
-      const updatedBlog = await Blog.update(id, req.body);
+    const updatedBlog = await Blog.update(id, req.body);
 
-      if (!updatedBlog) {
-        return res.status(404).json({ error: "Blog not found" });
-      }
-
-      logger.info(`Updated blog with ID: ${id}`);
-      res.json(updatedBlog);
-    } catch (error) {
-      if (error.message === "Invalid blog ID format") {
-        return res.status(400).json({ error: error.message });
-      }
-      throw error;
+    if (!updatedBlog) {
+      return res.status(404).json({ error: "Blog not found" });
     }
+
+    logger.info(`Updated blog with ID: ${id}`);
+    res.json(updatedBlog);
   } catch (error) {
-    logger.error(" Error updating blog:", error);
-    res
-      .status(500)
-      .json({ error: "Failed to update blog", details: error.message });
+    if (error.message === "Invalid blog ID format") {
+      return res.status(400).json({ error: error.message });
+    }
+    handleError(res, error, "updating blog");
   }
 };
 
@@ -103,27 +90,19 @@ const updateBlog = async (req, res) => {
 const deleteBlog = async (req, res) => {
   try {
     const { id } = req.params;
+    const deletedCount = await Blog.delete(id);
 
-    try {
-      const deletedCount = await Blog.delete(id);
-
-      if (deletedCount === 0) {
-        return res.status(404).json({ error: "Blog not found" });
-      }
-
-      logger.info(` Deleted blog with ID: ${id}`);
-      res.json({ message: "Blog deleted successfully" });
-    } catch (error) {
-      if (error.message === "Invalid blog ID format") {
-        return res.status(400).json({ error: error.message });
-      }
-      throw error;
+    if (deletedCount === 0) {
+      return res.status(404).json({ error: "Blog not found" });
     }
+
+    logger.info(`Deleted blog with ID: ${id}`);
+    res.json({ message: "Blog deleted successfully" });
   } catch (error) {
-    logger.error("Error deleting blog:", error);
-    res
-      .status(500)
-      .json({ error: "Failed to delete blog", details: error.message });
+    if (error.message === "Invalid blog ID format") {
+      return res.status(400).json({ error: error.message });
+    }
+    handleError(res, error, "deleting blog");
   }
 };
 
