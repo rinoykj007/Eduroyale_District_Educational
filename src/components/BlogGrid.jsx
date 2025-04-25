@@ -1,30 +1,11 @@
 import React, { useState } from "react";
 import { FaShare } from "react-icons/fa";
 
-interface BlogPost {
-  _id: string;
-  title: string;
-  date?: {
-    month: string;
-    day: string;
-    year: string;
-  };
-  image?: string;
-  category: string;
-  author: string;
-  quote?: string;
-  url?: string;
-}
-
-interface BlogGridProps {
-  blogs: BlogPost[];
-}
-
-const BlogGrid: React.FC<BlogGridProps> = ({ blogs }) => {
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+const BlogGrid = ({ blogs }) => {
+  const [selectedPost, setSelectedPost] = useState(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  const handlePostClick = (post: BlogPost, event: React.MouseEvent) => {
+  const handlePostClick = (post, event) => {
     if (post.url) {
       window.open(post.url, "_blank");
       return;
