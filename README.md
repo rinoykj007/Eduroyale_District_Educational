@@ -2,7 +2,7 @@
 
 A modern educational consulting web application built with React and TypeScript, providing comprehensive educational services and resources.
 
-## Live Demo
+## Live Demo (With the help of my friends)
 
 Visit our live application: https://prffrondend-production.up.railway.app/
 
