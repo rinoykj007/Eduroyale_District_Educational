@@ -14,6 +14,7 @@ const client = new MongoClient(uri, {
   minPoolSize: 5,
 });
 
+// Code logic implemented by Rinoy
 let db;
 let isConnected = false;
 
