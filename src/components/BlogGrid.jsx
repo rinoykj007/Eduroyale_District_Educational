@@ -5,9 +5,9 @@ const BlogGrid = ({ blogs }) => {
   const [selectedPost, setSelectedPost] = useState(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  const handlePostClick = (post, event) => {
+  const handlePostClick = (post) => {
     if (post.url) {
-      window.open(post.url, "_blank");
+      window.open(post.url);
       return;
     }
     setSelectedPost(post);
@@ -54,7 +54,9 @@ const BlogGrid = ({ blogs }) => {
                   className="h-full w-full object-cover relative group-hover:brightness-[0.8] transition-all duration-500 ease-in-out transform group-hover:scale-105"
                 />
                 <figcaption className="absolute bottom-0 bg-gradient-to-t from-black/40 to-transparent w-full p-3 md:p-5 h-[80px] md:h-[90px] box-border text-center text-lg md:text-2xl uppercase text-white shadow-[0px_1px_1px_rgb(0_0_0_/_50%)] transition-all duration-300 flex flex-col group-hover:h-[100px] md:group-hover:h-[110px] group-hover:from-black/60">
-                  <span className="line-clamp-2 transform transition-transform duration-300 group-hover:-translate-y-1">{post.title}</span>
+                  <span className="line-clamp-2 transform transition-transform duration-300 group-hover:-translate-y-1">
+                    {post.title}
+                  </span>
                   <span className="text-xs md:text-sm normal-case font-light mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     By {post.author} | {post.category}
                   </span>
