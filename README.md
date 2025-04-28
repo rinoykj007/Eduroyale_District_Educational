@@ -4,26 +4,31 @@ A modern educational consulting web application built with React and TypeScript,
 
 ## Project Development Note
 
-This project was developed with the assistance of AI language models. The following components and files were generated using AI:
+This project was developed using dummy data with the assistance of AI language models. The following components and files were generated with AI support:
 
-### Frontend Components
 - Services Component (`src/components/Services.tsx`)
 - Card Selection Component (`src/components/CardSelection.tsx`)
 - Testimonial Carousel (`src/components/TestimonialCarousel.tsx`)
 - Home Page (`src/components/Home.tsx`)
 - Navigation Bar (`src/components/Navbar.tsx`)
+- WhatsApp Integration (`src/components/WhatsApp.jsx`)
+- Blog Components (`src/components/BlogForm.jsx`, `src/components/BlogGrid.jsx`)
 
-### Backend Implementation
-- Blog Controller (`backend/controllers/blogController.js`)
-- Blog Model (`backend/models/Blog.js`)
-- Blog Routes (`backend/routes/blogRoutes.js`)
-- Server Setup (`backend/server.js`)
+- Course Selection (`src/pages/Services/CourseSelection.jsx`)
+- Country Selection (`src/pages/Services/CountrySelection.jsx`)
+- Visa Guidance (`src/pages/Services/VisaGuidance.jsx`)
+- Travel Assistance (`src/pages/Services/TravelAssistance.jsx`)
+- Bank Loan (`src/pages/Services/Bank_Loan.jsx`)
+- IELTS Training (`src/pages/Services/FreeIeltsTraining.jsx`)
+- Expert Counseling (`src/pages/Services/Expert_Counseling.jsx`)
+- Post-Visa Assistance (`src/pages/Services/PostVisaAssistance.jsx`)
 
-### Configuration Files
-- Project Documentation (README.md)
-- Package Configuration (package.json)
-- PostCSS Configuration (postcss.config.js)
-- ESLint Configuration (eslint.config.js)
+- Main Pages
+  - About Page (`src/About.tsx`)
+  - Courses Page (`src/pages/Courses.jsx`)
+  - Contact Page (`src/pages/Contact.jsx`)
+  - Blog Page (`src/pages/Blog.tsx`)
+  - Admin Dashboard (`src/pages/admin/BlogAdmin.jsx`)
 
 ## Live Demo (With the help of my friends)
 
