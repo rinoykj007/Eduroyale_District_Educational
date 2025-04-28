@@ -2,6 +2,29 @@
 
 A modern educational consulting web application built with React and TypeScript, providing comprehensive educational services and resources.
 
+## Project Development Note
+
+This project was developed with the assistance of AI language models. The following components and files were generated using AI:
+
+### Frontend Components
+- Services Component (`src/components/Services.tsx`)
+- Card Selection Component (`src/components/CardSelection.tsx`)
+- Testimonial Carousel (`src/components/TestimonialCarousel.tsx`)
+- Home Page (`src/components/Home.tsx`)
+- Navigation Bar (`src/components/Navbar.tsx`)
+
+### Backend Implementation
+- Blog Controller (`backend/controllers/blogController.js`)
+- Blog Model (`backend/models/Blog.js`)
+- Blog Routes (`backend/routes/blogRoutes.js`)
+- Server Setup (`backend/server.js`)
+
+### Configuration Files
+- Project Documentation (README.md)
+- Package Configuration (package.json)
+- PostCSS Configuration (postcss.config.js)
+- ESLint Configuration (eslint.config.js)
+
 ## Live Demo (With the help of my friends)
 
 Visit our live application: https://prffrondend-production.up.railway.app/
@@ -67,7 +90,10 @@ Visit our live application: https://prffrondend-production.up.railway.app/
 ### Development Tools
 
 - Vite (MIT License) - https://vitejs.dev
-- TypeScript (Apache 2.0 License) - https://www.typescriptlang.org
+- JavaScript
+- MongoDB
+- Node.js
+- Express
 
 ## Getting Started
 
